@@ -1,30 +1,9 @@
+/* IMPOSTAZIONI GENERALI */
+
 html {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     color: #191919;
-}
-
-.bg-white {
-    background: #fff;
-}
-
-.bg-green {
-    background: #1a8917;
-}
-
-.color-animation {
-    transition-property: background-color;
-    transition-timing-function: linear;
-    transition-duration: 500ms;
-}
-
-.gray {
-    color: #9f9f9f;
-}
-
-.flex-center {
-    display: flex;
-    align-items: center;
 }
 
 .flex-start,
@@ -32,6 +11,25 @@ html {
 .flex-just {
     display: flex;
 }
+
+.flex-center-y {
+    display: flex;
+    align-items: center;
+}
+
+.gray {
+    color: #9f9f9f;
+}
+
+img.circle {
+    border-radius: 50%;
+}
+
+img.rounded {
+    border-radius: 25%;
+}
+
+/* HEADER */
 
 header {
     background: #ffc017;
@@ -42,6 +40,12 @@ header {
     top: 0;
     z-index: 1;
     border-bottom: 1px solid #191919;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    header {
+        padding: 25px 50px;
+    }
 }
 
 header nav ul li {
@@ -68,34 +72,56 @@ section div button a {
     text-decoration: none;
 }
 
-section div.first {
-    padding: 90px 100px;
-    width: 50%;
+.bg-white {
+    background: #fff;
 }
 
-section.banner {
+.bg-green {
+    background: #1a8917;
+}
+
+.color-animation {
+    transition-property: background-color;
+    transition-timing-function: linear;
+    transition-duration: 500ms;
+}
+
+/* FIRST SECTION - YELLOW BANNER */
+
+.banner {
     background: #ffc017;
     position: relative;
     border-bottom: 1px solid #191919;
 }
 
-section div.artwork {
-    position: absolute;
-    right: 0;
-    height: 100%;
+.banner div.first {
+    padding: 90px 100px;
+    width: 50%;
 }
 
-section div h2 {
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .banner div.first {
+        padding: 90px 50px;
+    }
+}
+
+.banner div.first h2 {
     font-family: 'Spectral', serif;
     font-size: 106px;
 }
 
-section div.first h3 {
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .banner div.first h2 {
+        font-size: 70px;
+    }
+}
+
+.banner div.first h3 {
     font-size: 24px;
     margin: 30px 0;
 }
 
-section div.first button {
+.banner div.first button {
     background: #191919;
     border: none;
     border-radius: 99em;
@@ -104,20 +130,27 @@ section div.first button {
     width: 213px;
 }
 
+.banner div.artwork {
+    position: absolute;
+    right: 0;
+    height: 100%;
+}
+
+/* SECOND SECTION - TRENDING */
+
 .trending {
     padding: 50px 100px;
     border-bottom: 2px solid #ededed;
 }
 
-.trending div:first-of-type {
-    margin-bottom: 20px;
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .trending {
+        padding: 50px;
+    }
 }
 
-.trending .trends-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 20px;
+.trending div:first-of-type {
+    margin-bottom: 20px;
 }
 
 .trending h3 {
@@ -127,20 +160,25 @@ section div.first button {
     text-transform: uppercase;
 }
 
+.trending .trends-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .trending .trends-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
 .trending span.number {
     color: #ededed;
     font-size: 32px;
     font-weight: 600;
     margin-right: 15px;
-}
-
-img.rounded {
-    border-radius: 25%;
-}
-
-/* main section.trending img */
-img.circle {
-    border-radius: 50%;
 }
 
 .trending h5 {
@@ -159,9 +197,25 @@ img.circle {
     font-size: 12px;
 }
 
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+    .star {
+        display: none;
+    }
+}
+
+
+/* THIRD SECTION - ARTICLES */
+
 .articles {
     padding: 50px 50px 50px 100px;
     flex-direction: column;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .articles {
+        padding: 50px;
+    }
 }
 
 .articles img.small {
@@ -195,24 +249,29 @@ img.circle {
     padding: 2px 8px;
 }
 
-img.big {
+.articles img.big {
     width: 200px;
     height: 134px;
     margin-left: 30px;
 }
 
-main .articles .flex-just {
+.articles .flex-just {
     width: 100%;
     justify-content: space-between;
 }
 
+/* spazio tra gli articoli */
 .gap {
     gap: 35px;
 }
 
-.size {
+/* dimensione articoli, date */
+.size,
+.day-time {
     width: 100%;
 }
+
+/* FOURTH SECTION - TOPICS */
 
 .topics h3 {
     font-size: 16px;
@@ -225,6 +284,39 @@ main .articles .flex-just {
     flex-direction: column;
     margin: 50px 100px 0 0;
     width: 30%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+    /* classe aggiunta al div che contiene .articles, 
+    .topics e .footer per cambiare flex-direction */
+    .smaller-version {
+        flex-direction: column;
+    }
+
+    .col {
+        width: 100%;
+        margin: 50px 50px 0 50px;
+    }
+
+    .topics,
+    .topics h3,
+    .tag-container,
+    .footer {
+        margin-right: 50px;
+    }
+
+    .topics {
+        order: 1;
+    }
+
+    .footer {
+        order: 2;
+    }
+
+    .articles {
+        order: 3;
+    }
 }
 
 .tag-container {
@@ -244,6 +336,8 @@ main .articles .flex-just {
     margin: 0 10px 10px 0;
     padding: 8px 16px;
 }
+
+/* FIFTH SECTION - FOOTER */
 
 .footer {
     margin-top: 20px;
